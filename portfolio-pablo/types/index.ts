@@ -18,7 +18,6 @@ export type Profile = {
   name: string;
   headline: string;
   shortHeadline: string;
-  location: string;
   status: string;
   summary: string[];
   highlights: ProfileHighlight[];

@@ -6,12 +6,11 @@ export const profile: Profile = {
   name: "Pablo Vallejo",
   headline: "Senior Backend Engineer — Node.js · TypeScript · Big Data",
   shortHeadline: "Senior Backend Engineer",
-  location: "Bangkok, Thailand",
   status: "Open to permanent and freelance opportunities",
   summary: [
     "Spanish Senior Backend Engineer with 8+ years of experience designing high-performance microservices and monoliths backed by real-time Big Data pipelines.",
     "Expert in Node.js and TypeScript, with proven impact in high-throughput environments serving more than 10 million users. Comfortable owning systems end-to-end, from architecture and observability to production rollout.",
-    "EU citizen, currently based in Bangkok. Available for permanent positions and freelance engagements worldwide.",
+    "EU citizen. Available for permanent positions and freelance engagements worldwide.",
   ],
   highlights: [
     {
@@ -49,12 +48,6 @@ export const profile: Profile = {
       value: "pablovallejodev",
       href: "https://github.com/pablovallejodev",
       icon: "github",
-    },
-    {
-      label: "Location",
-      value: "Bangkok, Thailand",
-      href: "https://maps.google.com/?q=Bangkok",
-      icon: "location",
     },
     {
       label: "Status",

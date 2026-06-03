@@ -13,7 +13,7 @@ export function Contact() {
       id="contact"
       eyebrow="05 · Contact"
       title="Let's build something reliable together."
-      description="Open to senior backend roles, technical leadership and freelance engagements. Remote-friendly, currently based in Bangkok."
+      description="Open to senior backend roles, technical leadership and freelance engagements. Remote-friendly."
     >
       <Reveal direction="scale">
         <div className="group relative isolate overflow-hidden rounded-3xl border border-white/60 glass-teal shadow-luminous ring-1 ring-teal/10">

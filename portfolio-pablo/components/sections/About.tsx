@@ -43,7 +43,6 @@ export function About() {
             <ul className="mt-4 space-y-3 text-sm text-text">
               <Fact label="Role" value="Senior Backend Engineer" />
               <Fact label="Stack" value="Node.js · TypeScript · Big Data" />
-              <Fact label="Based in" value={profile.location} />
               <Fact label="Citizenship" value="Spanish · EU" />
               <Fact label="Availability" value="Permanent · Freelance" />
             </ul>

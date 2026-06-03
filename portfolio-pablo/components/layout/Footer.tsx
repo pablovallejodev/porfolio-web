@@ -23,10 +23,6 @@ export function Footer() {
           </a>
           .
         </p>
-        <p className="font-mono text-xs uppercase tracking-wider text-text-muted">
-          <span className="mr-2 inline-flex size-1.5 rounded-full bg-teal align-middle" />
-          {profile.location}
-        </p>
       </div>
     </footer>
   );

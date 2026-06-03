@@ -8,5 +8,5 @@ export const languages: Language[] = [
     fluency: "Full Professional Proficiency",
     level: "fluent",
   },
-  { language: "Thai", fluency: "Beginner", level: "beginner" },
+  //{ language: "Thai", fluency: "Beginner", level: "beginner" },
 ];

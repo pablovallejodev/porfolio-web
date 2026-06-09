@@ -5,6 +5,28 @@ import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { TerminalSsh } from "@/components/ui/TerminalSsh";
 
+const contactSocial = profile.social.filter(
+  (item) => item.href && item.icon !== "email"
+);
+
+function HighlightedEmail({ email }: { email: string }) {
+  const at = email.indexOf("@");
+  if (at === -1) {
+    return <span className="font-semibold text-white">{email}</span>;
+  }
+
+  const local = email.slice(0, at);
+  const domain = email.slice(at + 1);
+
+  return (
+    <span className="text-lg font-semibold text-white md:text-xl">
+      <span>{local}</span>
+      <span className="text-white/50">@</span>
+      <span className="text-teal">{domain}</span>
+    </span>
+  );
+}
+
 export function Contact() {
   const email = profile.social.find((item) => item.icon === "email");
 
@@ -16,93 +38,57 @@ export function Contact() {
       description="Open to senior backend roles, technical leadership and freelance engagements. Remote-friendly."
     >
       <Reveal direction="scale">
-        <div className="group relative isolate overflow-hidden rounded-3xl border border-white/60 glass-teal shadow-luminous ring-1 ring-teal/10">
+        <div className="relative overflow-hidden rounded-[24px] bg-ink text-white">
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 -z-10"
-          >
-            <div className="absolute -left-32 -top-32 h-80 w-80 rounded-full bg-teal/20 blur-3xl animate-blob" />
-            <div
-              className="absolute -bottom-44 -right-32 h-96 w-96 rounded-full bg-teal-soft/25 blur-3xl animate-blob"
-              style={{ animationDelay: "-9s" }}
-            />
-            <div className="absolute left-1/3 top-1/2 h-56 w-56 rounded-full bg-white/70 blur-3xl animate-float-slow" />
-          </div>
-          <span
-            aria-hidden
-            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-teal to-transparent"
-          />
-          <span
-            aria-hidden
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-teal-soft/60 to-transparent"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(51,55,189,0.28),transparent_45%),radial-gradient(circle_at_0_100%,rgba(36,153,139,0.22),transparent_50%)]"
           />
 
-          <div className="grid gap-10 p-8 md:grid-cols-5 md:p-12">
-            <div className="md:col-span-3">
-              <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.22em] text-text-muted">
-                <span
-                  aria-hidden
-                  className="inline-flex size-1.5 rounded-full bg-teal"
-                />
+          <div className="relative grid gap-10 p-6 md:grid-cols-[1.1fr_1fr] md:gap-14 md:p-10 lg:p-14">
+            <div className="flex flex-col gap-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.06em] text-teal">
                 Best way to reach me
               </p>
+
               {email ? (
                 <a
                   href={email.href}
-                  className="group/email mt-3 inline-flex items-center gap-3 text-2xl font-semibold text-text-strong transition-colors hover:text-teal md:text-3xl"
+                  className="group/email inline-flex items-center gap-3 transition-opacity hover:opacity-90"
                 >
-                  <span className="inline-flex size-10 items-center justify-center rounded-xl bg-teal/10 text-teal transition-transform group-hover/email:rotate-6 group-hover/email:scale-110">
-                    <Icon name="email" size={20} />
+                  <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-teal/20 text-teal transition-colors group-hover/email:bg-teal/30">
+                    <Icon name="email" size={18} />
                   </span>
-                  <span className="break-all">{email.value}</span>
+                  <HighlightedEmail email={email.value} />
                 </a>
               ) : null}
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-text">
-                I usually reply within 24 hours. Feel free to share project
-                details, role specifics or just say hi.
+
+              <p className="max-w-md text-[15px] leading-relaxed text-white/70">
+                Happy to hear from you — drop me a line about a role, a project,
+                or just to say hi. Thanks for stopping by.
               </p>
+
               <a
                 href={email?.href ?? "#"}
-                className="group/cta mt-7 inline-flex items-center gap-2 rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-white shadow-soft transition-all hover:bg-teal-deep hover:-translate-y-px hover:shadow-glow-teal"
+                className="inline-flex h-11 w-fit items-center gap-2 rounded-full bg-teal px-5 text-sm font-semibold text-white transition-all hover:bg-teal-deep hover:-translate-y-px hover:shadow-glow-teal"
               >
                 Send me an email
-                <Icon
-                  name="arrow"
-                  size={16}
-                  className="transition-transform group-hover/cta:translate-x-0.5"
-                />
+                <Icon name="arrow" size={16} />
               </a>
             </div>
 
-            <div className="md:col-span-2">
-              <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.22em] text-text-muted">
-                <span
-                  aria-hidden
-                  className="inline-flex size-1.5 rounded-full bg-teal"
-                />
+            <div className="flex flex-col justify-center gap-4 md:pl-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.06em] text-teal">
                 Elsewhere
               </p>
-              <div className="mt-4">
-                <SocialLinks items={profile.social} />
-              </div>
+              <SocialLinks items={contactSocial} variant="icons-dark" />
             </div>
+          </div>
 
-            <div className="md:col-span-5">
-              <div className="relative my-2 flex items-center gap-4">
-                <span
-                  aria-hidden
-                  className="h-px flex-1 bg-gradient-to-r from-transparent via-border-strong/70 to-transparent"
-                />
-                <span className="font-mono text-[10.5px] uppercase tracking-[0.28em] text-text-muted">
-                  Or explore from your terminal
-                </span>
-                <span
-                  aria-hidden
-                  className="h-px flex-1 bg-gradient-to-r from-transparent via-border-strong/70 to-transparent"
-                />
-              </div>
-              <TerminalSsh className="mt-4" />
-            </div>
+          <div className="relative border-t border-white/10 px-6 py-5 md:px-10 lg:px-14">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.06em] text-white/50">
+              Or explore from your terminal
+            </p>
+            <TerminalSsh density="inline" />
           </div>
         </div>
       </Reveal>

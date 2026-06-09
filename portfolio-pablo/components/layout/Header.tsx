@@ -33,7 +33,7 @@ export function Header() {
         >
           <span
             aria-hidden
-            className="relative inline-flex size-9 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-navy to-teal-deep font-mono text-sm font-semibold text-white shadow-soft"
+            className="relative inline-flex size-9 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-teal to-ink font-mono text-sm font-semibold text-white shadow-soft"
           >
             <span className="relative z-10">PV</span>
             <span
@@ -42,7 +42,7 @@ export function Header() {
             />
           </span>
           <span className="hidden flex-col leading-tight sm:flex">
-            <span className="text-sm font-semibold text-text-strong">
+            <span className="font-serif text-sm text-text-strong">
               {profile.name}
             </span>
             <span className="font-mono text-[10px] uppercase tracking-wider text-text-muted">
@@ -81,13 +81,9 @@ export function Header() {
 
         <a
           href="#contact"
-          className="group relative inline-flex items-center gap-1.5 overflow-hidden rounded-full bg-navy px-4 py-2 text-sm font-medium text-white shadow-soft transition-all hover:shadow-glow-teal"
+          className="inline-flex items-center gap-1.5 rounded-full bg-teal px-4 py-2 text-sm font-semibold text-white shadow-soft transition-all hover:bg-teal-deep hover:-translate-y-px hover:shadow-glow-teal"
         >
-          <span className="relative z-10">Get in touch</span>
-          <span
-            aria-hidden
-            className="absolute inset-0 -translate-x-full bg-gradient-to-r from-teal to-teal-deep transition-transform duration-500 group-hover:translate-x-0"
-          />
+          Get in touch
         </a>
       </div>
     </header>

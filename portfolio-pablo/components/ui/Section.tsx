@@ -25,16 +25,13 @@ export function Section({
       <div className="mx-auto max-w-5xl px-6 md:px-10">
         <Reveal>
           <header className="mb-12 max-w-2xl">
-            <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.22em] text-teal">
-              <span
-                aria-hidden
-                className="inline-flex h-px w-8 bg-gradient-to-r from-teal to-transparent"
-              />
+            <p className="eyebrow-pill">
+              <span className="eyebrow-dot" aria-hidden />
               {eyebrow}
             </p>
             <h2
               id={`${id}-title`}
-              className="mt-3 text-3xl font-semibold tracking-tight text-text-strong md:text-4xl"
+              className="font-serif mt-4 text-3xl tracking-tight text-text-strong md:text-4xl"
             >
               {title}
             </h2>

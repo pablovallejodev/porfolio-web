@@ -63,17 +63,13 @@ export function Contact() {
               </p>
               <a
                 href={email?.href ?? "#"}
-                className="group/cta mt-7 inline-flex items-center gap-2 overflow-hidden rounded-full bg-navy px-5 py-2.5 text-sm font-medium text-white shadow-soft transition-all hover:shadow-glow-teal"
+                className="group/cta mt-7 inline-flex items-center gap-2 rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-white shadow-soft transition-all hover:bg-teal-deep hover:-translate-y-px hover:shadow-glow-teal"
               >
-                <span className="relative z-10">Send me an email</span>
+                Send me an email
                 <Icon
                   name="arrow"
                   size={16}
-                  className="relative z-10 transition-transform group-hover/cta:translate-x-0.5"
-                />
-                <span
-                  aria-hidden
-                  className="absolute inset-0 z-[5] -translate-x-full bg-gradient-to-r from-teal to-teal-deep transition-transform duration-500 group-hover/cta:translate-x-0"
+                  className="transition-transform group-hover/cta:translate-x-0.5"
                 />
               </a>
             </div>

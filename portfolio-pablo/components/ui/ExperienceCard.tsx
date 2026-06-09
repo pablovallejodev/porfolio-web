@@ -21,10 +21,10 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
   } = experience;
 
   return (
-    <article className="group relative overflow-hidden rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-teal/50 hover:shadow-soft md:p-8">
+    <article className="group relative overflow-hidden rounded-[20px] border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-teal/40 hover:shadow-soft md:p-8">
       <span
         aria-hidden
-        className="absolute inset-y-0 left-0 w-[3px] origin-top scale-y-0 bg-gradient-to-b from-teal to-navy transition-transform duration-500 group-hover:scale-y-100"
+        className="absolute inset-y-0 left-0 w-[3px] origin-top scale-y-0 bg-teal transition-transform duration-500 group-hover:scale-y-100"
       />
       <span
         aria-hidden
@@ -33,7 +33,7 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
 
       <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
         <div>
-          <h3 className="text-lg font-semibold text-text-strong md:text-xl">
+          <h3 className="font-serif text-lg text-text-strong md:text-xl">
             {role}
           </h3>
           <p className="mt-1 text-sm text-text">
@@ -42,13 +42,13 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
                 href={companyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-medium text-navy transition-colors hover:text-teal"
+                className="inline-flex items-center gap-1.5 font-medium text-ink transition-colors hover:text-teal"
               >
                 {company}
                 <Icon name="external" size={13} />
               </a>
             ) : (
-              <span className="font-medium text-navy">{company}</span>
+              <span className="font-medium text-ink">{company}</span>
             )}
             <span className="text-text-muted"> · {location}</span>
           </p>

@@ -17,7 +17,7 @@ export function About() {
                 key={paragraph}
                 className={
                   idx === 0
-                    ? "relative pl-5 before:absolute before:left-0 before:top-1 before:h-[calc(100%-0.5rem)] before:w-[3px] before:rounded-full before:bg-gradient-to-b before:from-teal before:to-navy"
+                    ? "relative pl-5 before:absolute before:left-0 before:top-1 before:h-[calc(100%-0.5rem)] before:w-[3px] before:rounded-full before:bg-gradient-to-b before:from-teal before:to-science"
                     : ""
                 }
               >
@@ -28,12 +28,12 @@ export function About() {
         </Reveal>
 
         <Reveal direction="right" delay={150} className="md:col-span-2">
-          <aside className="group relative overflow-hidden rounded-2xl border border-border bg-surface p-6 transition-all hover:border-teal/40 hover:shadow-soft">
+          <aside className="group relative overflow-hidden rounded-[20px] border border-border bg-ice p-6 transition-all hover:border-teal/40 hover:shadow-soft">
             <span
               aria-hidden
               className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-teal/15 blur-2xl transition-opacity duration-500 group-hover:opacity-150"
             />
-            <h3 className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.22em] text-text-muted">
+            <h3 className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.22em] text-science">
               <span
                 aria-hidden
                 className="inline-flex size-1.5 rounded-full bg-teal"

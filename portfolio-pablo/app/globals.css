@@ -1,34 +1,45 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand */
-  --brand-navy: #13293d;
-  --brand-navy-soft: #1e3a5a;
-  --brand-teal: #24998b;
-  --brand-teal-soft: #4ab8ab;
-  --brand-teal-deep: #1c7c70;
+  /* Deepfriend brand palette */
+  --white: #ffffff;
+  --deep-teal: #24998b;
+  --deep-teal-dark: #1d7f73;
+  --deep-teal-soft: #e8f5f3;
+  --science-blue: #3337bd;
+  --science-blue-soft: #eeeef8;
+  --ice-white: #f5f7f7;
+  --deep-ink: #1a1d1d;
+  --slate: #6b7575;
 
   /* Surfaces */
-  --background: #ffffff;
-  --surface: #ffffff;
-  --surface-subtle: #f4f7fa;
-  --surface-tint: #eef4f6;
+  --background: var(--white);
+  --surface: var(--white);
+  --surface-subtle: var(--ice-white);
+  --surface-tint: var(--ice-white);
 
   /* Text */
-  --text-strong: #13293d;
-  --text: #1f344a;
-  --text-muted: #5b6e83;
-  --text-subtle: #94a3b8;
+  --text-strong: var(--deep-ink);
+  --text: var(--deep-ink);
+  --text-muted: var(--slate);
+  --text-subtle: #8a9393;
 
   /* Borders */
-  --border: #e2e8ef;
-  --border-strong: #c5d1de;
+  --border: #1a1d1d14;
+  --border-strong: #1a1d1d24;
 
   /* Accents */
-  --accent: #24998b;
-  --accent-strong: #1c7c70;
+  --accent: var(--deep-teal);
+  --accent-strong: var(--deep-teal-dark);
   --accent-soft: rgba(36, 153, 139, 0.12);
-  --navy-soft: rgba(19, 41, 61, 0.08);
+  --science-soft: rgba(51, 55, 189, 0.08);
+
+  /* Legacy aliases (mapped to Deepfriend tokens) */
+  --brand-navy: var(--deep-ink);
+  --brand-navy-soft: #141717;
+  --brand-teal: var(--deep-teal);
+  --brand-teal-soft: #4ab8ab;
+  --brand-teal-deep: var(--deep-teal-dark);
 }
 
 @theme inline {
@@ -49,13 +60,20 @@
   --color-accent-strong: var(--accent-strong);
   --color-accent-soft: var(--accent-soft);
 
-  --color-navy: var(--brand-navy);
-  --color-navy-soft: var(--brand-navy-soft);
-  --color-teal: var(--brand-teal);
-  --color-teal-soft: var(--brand-teal-soft);
-  --color-teal-deep: var(--brand-teal-deep);
+  --color-ink: var(--deep-ink);
+  --color-slate: var(--slate);
+  --color-science: var(--science-blue);
+  --color-science-soft: var(--science-blue-soft);
+  --color-ice: var(--ice-white);
 
-  --font-sans: var(--font-sans-geist);
+  --color-navy: var(--deep-ink);
+  --color-navy-soft: var(--brand-navy-soft);
+  --color-teal: var(--deep-teal);
+  --color-teal-soft: var(--brand-teal-soft);
+  --color-teal-deep: var(--deep-teal-dark);
+
+  --font-sans: var(--font-sans-mulish);
+  --font-serif: var(--font-serif-cormorant);
   --font-mono: var(--font-mono-geist);
 }
 
@@ -66,15 +84,54 @@ html {
 body {
   background: var(--background);
   color: var(--text);
-  font-family: var(--font-sans-geist), ui-sans-serif, system-ui, sans-serif;
-  font-feature-settings: "ss01", "cv11";
+  font-family: var(--font-sans-mulish), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  background-image:
+    radial-gradient(circle at 12% -8%, rgba(36, 153, 139, 0.07), transparent 38%),
+    radial-gradient(circle at 92% 4%, rgba(51, 55, 189, 0.05), transparent 40%);
+  background-attachment: fixed;
 }
 
 ::selection {
-  background: var(--brand-teal);
+  background: var(--deep-teal);
   color: #ffffff;
+}
+
+/* ───────────────────────── Typography ───────────────────────── */
+
+.font-serif {
+  font-family: var(--font-serif-cormorant), Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ───────────────────────── Deepfriend eyebrow pill ───────────────────────── */
+
+.eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 12px;
+  font-family: var(--font-sans-mulish), ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--science-blue);
+  background: var(--science-blue-soft);
+  border: 1px solid rgba(51, 55, 189, 0.12);
+  border-radius: 980px;
+}
+
+.eyebrow-dot {
+  display: inline-flex;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--deep-teal);
+  box-shadow: 0 0 0 3px rgba(36, 153, 139, 0.15);
 }
 
 /* ───────────────────────── Reveal-on-scroll ───────────────────────── */
@@ -199,7 +256,6 @@ body {
   }
 }
 
-/* Bar fill animation triggered when parent reveal becomes visible */
 .bar-fill {
   transform: scaleX(0);
   transform-origin: left;
@@ -214,14 +270,14 @@ body {
 
 .bg-grid {
   background-image:
-    linear-gradient(to right, rgba(19, 41, 61, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(19, 41, 61, 0.07) 1px, transparent 1px);
-  background-size: 56px 56px;
+    linear-gradient(to right, rgba(26, 29, 29, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 29, 29, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
 .bg-dots {
   background-image: radial-gradient(
-    rgba(19, 41, 61, 0.12) 1px,
+    rgba(26, 29, 29, 0.1) 1px,
     transparent 1px
   );
   background-size: 22px 22px;
@@ -246,8 +302,8 @@ body {
 .text-gradient-brand {
   background: linear-gradient(
     135deg,
-    var(--brand-navy) 0%,
-    var(--brand-teal) 100%
+    var(--deep-ink) 0%,
+    var(--deep-teal) 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -257,8 +313,8 @@ body {
 .text-gradient-teal {
   background: linear-gradient(
     135deg,
-    var(--brand-teal) 0%,
-    var(--brand-navy) 100%
+    var(--deep-teal) 0%,
+    var(--deep-ink) 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -269,9 +325,8 @@ body {
 
 .shadow-soft {
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.6) inset,
-    0 6px 18px -10px rgba(36, 153, 139, 0.18),
-    0 18px 40px -24px rgba(19, 41, 61, 0.14);
+    0 1px 2px rgba(26, 29, 29, 0.04),
+    0 4px 16px rgba(26, 29, 29, 0.06);
 }
 
 .shadow-glow-teal {
@@ -283,15 +338,15 @@ body {
 .shadow-luminous {
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.7) inset,
-    0 8px 24px -12px rgba(36, 153, 139, 0.22),
-    0 22px 48px -28px rgba(19, 41, 61, 0.12);
+    0 8px 24px -12px rgba(36, 153, 139, 0.18),
+    0 12px 32px -16px rgba(26, 29, 29, 0.08);
 }
 
 .glass {
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.92) 0%,
-    rgba(238, 244, 246, 0.78) 100%
+    rgba(245, 247, 247, 0.78) 100%
   );
   -webkit-backdrop-filter: blur(14px) saturate(140%);
           backdrop-filter: blur(14px) saturate(140%);
@@ -301,7 +356,7 @@ body {
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.94) 0%,
-    rgba(36, 153, 139, 0.06) 60%,
+    rgba(36, 153, 139, 0.05) 60%,
     rgba(255, 255, 255, 0.92) 100%
   );
   -webkit-backdrop-filter: blur(14px) saturate(140%);

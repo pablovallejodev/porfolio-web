@@ -15,7 +15,7 @@ export function LanguageItem({ language }: LanguageItemProps) {
   const filled = levelToBars[language.level];
 
   return (
-    <div className="group flex items-center justify-between rounded-xl border border-border bg-surface px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-teal/40 hover:shadow-soft">
+    <div className="group flex items-center justify-between rounded-xl border border-border bg-ice px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-teal/40 hover:shadow-soft">
       <div>
         <p className="text-sm font-semibold text-text-strong">
           {language.language}

@@ -79,7 +79,7 @@ export function TerminalSsh({
     <div
       ref={ref}
       data-in-view={inView ? "true" : "false"}
-      className={`group/term relative isolate overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#0b1d2e] via-[#13293d] to-[#1b3a55] shadow-luminous ring-1 ring-teal/15 transition-all duration-500 hover:-translate-y-0.5 hover:ring-teal/35 hover:shadow-glow-teal ${className ?? ""}`}
+      className={`group/term relative isolate overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#141717] via-[#1a1d1d] to-[#1a1d1d] shadow-luminous ring-1 ring-teal/15 transition-all duration-500 hover:-translate-y-0.5 hover:ring-teal/35 hover:shadow-glow-teal ${className ?? ""}`}
       aria-label={`Run ${command} in your terminal`}
     >
       <span
@@ -101,7 +101,7 @@ export function TerminalSsh({
 
       <div className={`relative flex items-center gap-3 font-mono ${pad}`}>
         <div className={`flex min-w-0 flex-1 items-baseline gap-3 ${fontSize} text-white`}>
-          <span className="select-none text-teal-soft/90">~ $</span>
+          <span className="select-none text-teal/90">~ $</span>
           <span className="flex min-w-0 items-baseline">
             <span className="break-all whitespace-pre-wrap text-white/95">
               {typed}

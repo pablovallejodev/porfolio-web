@@ -9,19 +9,9 @@ const contactSocial = profile.social.filter(
 );
 
 function HighlightedEmail({ email }: { email: string }) {
-  const at = email.indexOf("@");
-  if (at === -1) {
-    return <span className="font-semibold text-white">{email}</span>;
-  }
-
-  const local = email.slice(0, at);
-  const domain = email.slice(at + 1);
-
   return (
     <span className="text-lg font-semibold text-white md:text-xl">
-      <span>{local}</span>
-      <span className="text-white/50">@</span>
-      <span className="text-teal">{domain}</span>
+      {email}
     </span>
   );
 }

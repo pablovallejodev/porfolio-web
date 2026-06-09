@@ -1,9 +1,8 @@
-import { profile } from "@/constants/profile";
+import { profile, projectRepoUrl } from "@/constants/profile";
 import { Section } from "@/components/ui/Section";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
-import { TerminalSsh } from "@/components/ui/TerminalSsh";
 
 const contactSocial = profile.social.filter(
   (item) => item.href && item.icon !== "email"
@@ -82,13 +81,6 @@ export function Contact() {
               </p>
               <SocialLinks items={contactSocial} variant="icons-dark" />
             </div>
-          </div>
-
-          <div className="relative border-t border-white/10 px-6 py-5 md:px-10 lg:px-14">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.06em] text-white/50">
-              Or explore from your terminal
-            </p>
-            <TerminalSsh density="inline" />
           </div>
         </div>
       </Reveal>

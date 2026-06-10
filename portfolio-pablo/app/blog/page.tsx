@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Header } from "@/components/layout/Header";
+import { BlogHeader } from "@/components/layout/BlogHeader";
 import { Footer } from "@/components/layout/Footer";
 import { BlogHero } from "@/components/sections/BlogHero";
 import { BlogGrid } from "@/components/sections/BlogGrid";
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <>
-      <Header />
+      <BlogHeader />
       <main className="flex-1">
         <BlogHero />
         <BlogGrid />

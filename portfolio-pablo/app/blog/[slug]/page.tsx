@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Header } from "@/components/layout/Header";
+import { BlogHeader } from "@/components/layout/BlogHeader";
 import { Footer } from "@/components/layout/Footer";
 import { BlogPostHeader } from "@/components/blog/BlogPostHeader";
 import { BlogPostFooter } from "@/components/blog/BlogPostFooter";
@@ -44,7 +44,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <Header />
+      <BlogHeader />
       <main className="flex-1">
         <BlogPostHeader post={post} />
         <article className="py-14 md:py-20">

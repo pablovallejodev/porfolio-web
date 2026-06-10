@@ -64,3 +64,11 @@ export type NavItem = {
   id: string;
   label: string;
 };
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  publishedAt: string;
+  readTime: string;
+};

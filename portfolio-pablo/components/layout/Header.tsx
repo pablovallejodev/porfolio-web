@@ -27,9 +27,9 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4 md:px-10">
         <a
-          href="#top"
+          href="/"
           className="group flex items-center gap-2.5"
-          aria-label="Go to top"
+          aria-label="Go to homepage"
         >
           <span
             aria-hidden
@@ -58,7 +58,7 @@ export function Header() {
               return (
                 <li key={item.id}>
                   <a
-                    href={`#${item.id}`}
+                    href={`/#${item.id}`}
                     className={`relative inline-flex items-center px-3 py-2 text-sm transition-colors ${
                       isActive
                         ? "text-teal"
@@ -80,7 +80,7 @@ export function Header() {
         </nav>
 
         <a
-          href="#contact"
+          href="/#contact"
           className="inline-flex items-center gap-1.5 rounded-full bg-teal px-4 py-2 text-sm font-semibold text-white shadow-soft transition-all hover:bg-teal-deep hover:-translate-y-px hover:shadow-glow-teal"
         >
           Get in touch

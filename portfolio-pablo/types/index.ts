@@ -72,3 +72,7 @@ export type BlogPost = {
   publishedAt: string;
   readTime: string;
 };
+
+export type BlogPostWithContent = BlogPost & {
+  content: string;
+};

@@ -2,8 +2,10 @@ import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
+import { getAllPosts } from "@/lib/blog";
 
-export function BlogCta() {
+export async function BlogCta() {
+  const postCount = getAllPosts().length;
   return (
     <Section
       id="blog"
@@ -30,7 +32,7 @@ export function BlogCta() {
                 honest experience you can skim before we connect on LinkedIn.
               </p>
               <p className="font-mono text-xs uppercase tracking-wider text-text-muted">
-                8 articles · Updated regularly
+                {postCount} articles · Updated regularly
               </p>
             </div>
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { BlogPost } from "@/types";
+import { formatPostDate } from "@/lib/blog";
 import { Icon } from "./Icon";
 
 type BlogPostCardProps = {
@@ -21,7 +22,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
       />
 
       <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-text-muted">
-        <time dateTime={publishedAt}>{publishedAt}</time>
+        <time dateTime={publishedAt}>{formatPostDate(publishedAt)}</time>
         <span aria-hidden>·</span>
         <span>{readTime} read</span>
       </div>

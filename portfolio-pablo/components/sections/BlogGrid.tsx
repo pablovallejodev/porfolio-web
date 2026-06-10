@@ -1,8 +1,9 @@
-import { blogPosts } from "@/constants/blog";
 import { BlogPostCard } from "@/components/ui/BlogPostCard";
 import { Reveal } from "@/components/ui/Reveal";
+import { getAllPosts } from "@/lib/blog";
 
-export function BlogGrid() {
+export async function BlogGrid() {
+  const blogPosts = getAllPosts();
   return (
     <section
       className="relative py-20 md:py-28"

@@ -19,11 +19,10 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-all duration-300 ${
-        scrolled
+      className={`sticky top-0 z-40 transition-all duration-300 ${scrolled
           ? "border-b border-border bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70"
           : "border-b border-transparent bg-background/0"
-      }`}
+        }`}
     >
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4 md:px-10">
         <a href="/" className="group flex items-center gap-2.5">
@@ -52,18 +51,16 @@ export function Header() {
                 <li key={item.id}>
                   <a
                     href={`/#${item.id}`}
-                    className={`relative inline-flex items-center px-3 py-2 text-sm transition-colors ${
-                      isActive
+                    className={`relative inline-flex items-center px-3 py-2 text-sm transition-colors ${isActive
                         ? "text-teal"
                         : "text-text-muted hover:text-text-strong"
-                    }`}
+                      }`}
                   >
                     {item.label}
                     <span
                       aria-hidden
-                      className={`absolute inset-x-3 -bottom-px h-[2px] rounded-full bg-gradient-to-r from-teal to-teal-soft transition-transform duration-300 ${
-                        isActive ? "scale-x-100" : "scale-x-0"
-                      } origin-left`}
+                      className={`absolute inset-x-3 -bottom-px h-[2px] rounded-full bg-gradient-to-r from-teal to-teal-soft transition-transform duration-300 ${isActive ? "scale-x-100" : "scale-x-0"
+                        } origin-left`}
                     />
                   </a>
                 </li>
@@ -74,7 +71,7 @@ export function Header() {
 
         <a
           href="/#contact"
-          className="inline-flex items-center gap-1.5 rounded-full bg-teal px-4 py-2 text-sm font-semibold text-white shadow-soft transition-all hover:bg-teal-deep hover:-translate-y-px hover:shadow-glow-teal"
+          className="inline-flex items-center gap-1.5 rounded-full bg-teal-deep px-4 py-2 text-sm font-semibold text-white shadow-soft transition-all hover:bg-teal-deep hover:-translate-y-px hover:shadow-glow-teal"
         >
           Get in touch
         </a>

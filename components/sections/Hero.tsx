@@ -51,7 +51,7 @@ export function Hero() {
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a
               href="#contact"
-              className="inline-flex h-12 items-center gap-2 rounded-full bg-teal px-6 text-[15px] font-semibold text-white transition-all hover:bg-teal-deep hover:-translate-y-px hover:shadow-glow-teal"
+              className="inline-flex h-12 items-center gap-2 rounded-full bg-teal-deep px-6 text-[15px] font-semibold text-white transition-all hover:bg-teal-deep hover:-translate-y-px hover:shadow-glow-teal"
             >
               Get in touch
               <Icon name="arrow" size={16} />

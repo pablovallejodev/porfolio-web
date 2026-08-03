@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { CSSProperties, ReactNode } from "react";
+import type { CSSProperties, ElementType, ReactNode } from "react";
 
 type RevealDirection = "up" | "left" | "right" | "scale";
+type RevealAs = "div" | "li";
 
 type RevealProps = {
+  as?: RevealAs;
   children: ReactNode;
   delay?: number;
   direction?: RevealDirection;
@@ -15,6 +17,7 @@ type RevealProps = {
 };
 
 export function Reveal({
+  as = "div",
   children,
   delay = 0,
   direction = "up",
@@ -22,7 +25,8 @@ export function Reveal({
   style,
   threshold = 0.12,
 }: RevealProps) {
-  const ref = useRef<HTMLDivElement | null>(null);
+  const Component = as as ElementType;
+  const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -51,7 +55,7 @@ export function Reveal({
   }, [threshold]);
 
   return (
-    <div
+    <Component
       ref={ref}
       className={`reveal ${className ?? ""}`}
       data-reveal={visible ? "visible" : "hidden"}
@@ -59,6 +63,6 @@ export function Reveal({
       style={{ transitionDelay: `${delay}ms`, ...style }}
     >
       {children}
-    </div>
+    </Component>
   );
 }

@@ -81,20 +81,32 @@ export function Hero() {
         <div className="mx-auto max-w-5xl px-6 py-8 md:px-10 md:py-10">
           <dl className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-4 md:gap-y-0">
             {profile.highlights.map((highlight, idx) => (
-              <Reveal key={highlight.label} delay={80 * idx} direction="scale">
-                <div className="flex items-start gap-3">
-                  <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-teal/10 text-teal">
+              <Reveal
+                key={highlight.label}
+                delay={80 * idx}
+                direction="scale"
+                className="flex items-start gap-3"
+              >
+                <dt className="sr-only">{highlight.label}</dt>
+                <dd className="m-0 flex items-start gap-3">
+                  <span
+                    aria-hidden="true"
+                    className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-teal/10 text-teal"
+                  >
                     <Icon name={highlightIcons[idx] ?? "stack"} size={15} />
                   </span>
                   <div>
-                    <dd className="font-serif text-2xl leading-none text-ink md:text-[1.75rem]">
+                    <span className="font-serif text-2xl leading-none text-ink md:text-[1.75rem]">
                       {highlight.value}
-                    </dd>
-                    <dt className="mt-1.5 text-[13px] leading-snug text-slate">
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="mt-1.5 block text-[13px] leading-snug text-slate"
+                    >
                       {highlight.label}
-                    </dt>
+                    </span>
                   </div>
-                </div>
+                </dd>
               </Reveal>
             ))}
           </dl>

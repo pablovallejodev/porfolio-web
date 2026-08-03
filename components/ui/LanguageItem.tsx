@@ -22,10 +22,7 @@ export function LanguageItem({ language }: LanguageItemProps) {
         </p>
         <p className="mt-0.5 text-xs text-text-muted">{language.fluency}</p>
       </div>
-      <div
-        className="flex items-center gap-1"
-        aria-label={`Proficiency: ${language.fluency}`}
-      >
+      <div className="flex items-center gap-1" aria-hidden="true">
         {Array.from({ length: 5 }).map((_, i) => {
           const isFilled = i < filled;
           return (

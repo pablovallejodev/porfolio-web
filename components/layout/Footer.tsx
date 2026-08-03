@@ -11,7 +11,7 @@ export function Footer() {
         <div className="grid gap-10 border-b border-white/10 pb-12 md:grid-cols-[1.6fr_1fr_1fr] md:gap-12 lg:gap-16">
           {/* Brand */}
           <div className="flex max-w-sm flex-col gap-4">
-            <a href="/" className="inline-flex items-center gap-2.5" aria-label="Go to homepage">
+            <a href="/" className="inline-flex items-center gap-2.5">
               <span className="inline-flex size-8 items-center justify-center rounded-lg bg-gradient-to-br from-teal to-teal-deep font-mono text-xs font-semibold text-white">
                 PV
               </span>
@@ -34,9 +34,9 @@ export function Footer() {
 
           {/* Navigate */}
           <div className="flex flex-col gap-3.5">
-            <h4 className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-white">
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-white">
               Navigate
-            </h4>
+            </p>
             <ul className="flex flex-col gap-2.5">
               {navItems.map((item) => (
                 <li key={item.id}>
@@ -53,9 +53,9 @@ export function Footer() {
 
           {/* Contact */}
           <div className="flex flex-col gap-3.5">
-            <h4 className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-white">
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-white">
               Contact
-            </h4>
+            </p>
             <ul className="flex flex-col gap-2.5">
               {email ? (
                 <li>

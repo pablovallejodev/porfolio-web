@@ -26,15 +26,8 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4 md:px-10">
-        <a
-          href="/"
-          className="group flex items-center gap-2.5"
-          aria-label="Go to homepage"
-        >
-          <span
-            aria-hidden
-            className="relative inline-flex size-9 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-teal to-ink font-mono text-sm font-semibold text-white shadow-soft"
-          >
+        <a href="/" className="group flex items-center gap-2.5">
+          <span className="relative inline-flex size-9 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-teal to-ink font-mono text-sm font-semibold text-white shadow-soft">
             <span className="relative z-10">PV</span>
             <span
               aria-hidden

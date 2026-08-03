@@ -19,19 +19,19 @@ export function Experience() {
         {experiences.map((experience, idx) => (
           <Reveal
             key={experience.id}
+            as="li"
             delay={idx * 90}
             direction="up"
+            className="relative md:pl-12"
           >
-            <li className="relative md:pl-12">
-              <span
-                aria-hidden
-                className="absolute left-0 top-7 hidden size-6 items-center justify-center md:inline-flex"
-              >
-                <span className="absolute inline-flex size-6 rounded-full bg-teal/20" />
-                <span className="relative inline-flex size-2.5 rounded-full bg-teal ring-4 ring-background" />
-              </span>
-              <ExperienceCard experience={experience} />
-            </li>
+            <span
+              aria-hidden
+              className="absolute left-0 top-7 hidden size-6 items-center justify-center md:inline-flex"
+            >
+              <span className="absolute inline-flex size-6 rounded-full bg-teal/20" />
+              <span className="relative inline-flex size-2.5 rounded-full bg-teal ring-4 ring-background" />
+            </span>
+            <ExperienceCard experience={experience} />
           </Reveal>
         ))}
       </ol>

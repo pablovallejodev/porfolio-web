@@ -1,4 +1,4 @@
-import { profile, projectRepoUrl } from "@/constants/profile";
+import { profile } from "@/constants/profile";
 import { Icon } from "@/components/ui/Icon";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { Reveal } from "@/components/ui/Reveal";
@@ -21,32 +21,20 @@ export function Hero() {
       {/* Main hero copy */}
       <div className="mx-auto max-w-5xl px-6 pb-16 pt-20 md:px-10 md:pb-20 md:pt-28">
         <Reveal>
-          <a
-            href={projectRepoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="eyebrow-pill transition-opacity hover:opacity-80"
-          >
-            <span className="eyebrow-dot" aria-hidden />
-            Open source · View code
-          </a>
-        </Reveal>
-
-        <Reveal delay={100}>
-          <h1 className="font-serif mt-8 max-w-3xl text-[clamp(2.5rem,7vw,4.75rem)] leading-[1.06] tracking-[-0.02em] text-ink">
+          <h1 className="font-serif max-w-3xl text-[clamp(2.5rem,7vw,4.75rem)] leading-[1.06] tracking-[-0.02em] text-ink">
             Backends built to{" "}
             <span className="text-teal">scale</span>.
           </h1>
         </Reveal>
 
-        <Reveal delay={180}>
+        <Reveal delay={100}>
           <p className="mt-5 max-w-xl text-[clamp(1rem,1.6vw,1.125rem)] leading-relaxed text-slate">
             {profile.name} — {profile.shortHeadline}. Node.js · TypeScript ·
             real-time Big Data.
           </p>
         </Reveal>
 
-        <Reveal delay={260}>
+        <Reveal delay={180}>
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a
               href="#contact"
@@ -64,7 +52,7 @@ export function Hero() {
           </div>
         </Reveal>
 
-        <Reveal delay={340}>
+        <Reveal delay={260}>
           <div className="mt-8">
             <SocialLinks items={heroSocial} variant="icons" />
           </div>

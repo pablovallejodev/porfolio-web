@@ -8,6 +8,7 @@ import { Languages } from "@/components/sections/Languages";
 import { Contact } from "@/components/sections/Contact";
 import { Terminal } from "@/components/sections/Terminal";
 import { BlogCta } from "@/components/sections/BlogCta";
+import { OpenSource } from "@/components/sections/OpenSource";
 
 export default function HomePage() {
   return (
@@ -22,6 +23,7 @@ export default function HomePage() {
         <Contact />
         <Terminal />
         <BlogCta />
+        <OpenSource />
       </main>
       <Footer />
     </>

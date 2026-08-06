@@ -2,7 +2,6 @@ import { profile, projectRepoUrl } from "@/constants/profile";
 import { Icon } from "@/components/ui/Icon";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { Reveal } from "@/components/ui/Reveal";
-import { TerminalSsh } from "@/components/ui/TerminalSsh";
 
 const highlightIcons = ["stack", "pulse", "spark", "passport"] as const;
 const heroSocial = profile.social.filter((item) => item.href);
@@ -66,12 +65,8 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={340}>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-8">
             <SocialLinks items={heroSocial} variant="icons" />
-            <TerminalSsh
-              density="inline"
-              className="w-full sm:max-w-md sm:shrink-0"
-            />
           </div>
         </Reveal>
       </div>

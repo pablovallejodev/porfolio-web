@@ -9,7 +9,7 @@ export async function BlogCta() {
   return (
     <Section
       id="blog"
-      eyebrow="06 · Blog"
+      eyebrow="07 · Blog"
       title="If you want to go deeper, read the blog."
       description="Personal notes on backend engineering, production lessons, and opinions from the field — written for peers and hiring managers alike."
     >

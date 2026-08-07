@@ -24,8 +24,8 @@ export function Hero() {
       </div>
 
       {/* Main hero: photo + copy (Contact-style row) */}
-      <div className="mx-auto max-w-5xl px-6 pb-16 pt-20 md:px-10 md:pb-20 md:pt-28">
-        <div className="grid gap-8 md:grid-cols-[auto_1fr] md:items-center md:gap-12">
+      <div className="mx-auto max-w-5xl px-6 pb-16 pt-20 md:px-10 md:pb-48 md:pt-28">
+        <div className="grid gap-8 md:grid-cols-[auto_1fr] md:items-center md:gap-16">
           <Reveal>
             <div className="mx-auto size-54 shrink-0 overflow-hidden rounded-[24px] md:mx-0 md:size-56 lg:size-64">
               <Image

@@ -4,7 +4,9 @@ import { SocialLinks } from "@/components/ui/SocialLinks";
 import { Reveal } from "@/components/ui/Reveal";
 
 const highlightIcons = ["stack", "pulse", "spark", "passport"] as const;
-const heroSocial = profile.social.filter((item) => item.href);
+const heroSocial = profile.social.filter(
+  (item) => item.href && item.icon !== "email",
+);
 
 export function Hero() {
   return (

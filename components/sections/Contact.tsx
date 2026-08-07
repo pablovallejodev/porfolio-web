@@ -4,8 +4,9 @@ import type { SocialLink } from "@/types";
 import { Section } from "@/components/ui/Section";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
+import { CopyEmail } from "@/components/ui/CopyEmail";
 
-const ACTION_ORDER = ["linkedin", "github", "email"] as const;
+const ACTION_ORDER = ["linkedin", "github"] as const;
 
 const actionIcons = ACTION_ORDER.flatMap((icon) =>
   profile.social.filter((item) => item.href && item.icon === icon),

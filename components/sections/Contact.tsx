@@ -11,14 +11,6 @@ const actionIcons = ACTION_ORDER.flatMap((icon) =>
   profile.social.filter((item) => item.href && item.icon === icon),
 );
 
-function HighlightedEmail({ email }: { email: string }) {
-  return (
-    <span className="text-lg font-semibold text-white md:text-xl">
-      {email}
-    </span>
-  );
-}
-
 function CompactIconLink({ item }: { item: SocialLink }) {
   const isExternal = item.href.startsWith("http");
 
@@ -69,17 +61,7 @@ export function Contact() {
                 Best way to reach me
               </p>
 
-              {email ? (
-                <a
-                  href={email.href}
-                  className="group/email inline-flex items-center gap-3 transition-opacity hover:opacity-90"
-                >
-                  <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-teal/20 text-teal transition-colors group-hover/email:bg-teal/30">
-                    <Icon name="email" size={18} />
-                  </span>
-                  <HighlightedEmail email={email.value} />
-                </a>
-              ) : null}
+              {email ? <CopyEmail email={email.value} /> : null}
 
               <p className="max-w-md text-[15px] leading-relaxed text-white/70">
                 Happy to hear from you — drop me a line about a role, a project,

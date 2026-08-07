@@ -79,6 +79,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -96,6 +97,7 @@ body {
     ),
     radial-gradient(circle at 92% 4%, rgba(51, 55, 189, 0.05), transparent 40%);
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 ::selection {

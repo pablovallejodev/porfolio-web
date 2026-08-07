@@ -1,32 +1,16 @@
 import Image from "next/image";
 import { profile } from "@/constants/profile";
-import type { SocialLink } from "@/types";
 import { Section } from "@/components/ui/Section";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { CopyEmail } from "@/components/ui/CopyEmail";
+import { CompactIconLink } from "@/components/ui/SocialLinks";
 
 const ACTION_ORDER = ["linkedin", "github"] as const;
 
 const actionIcons = ACTION_ORDER.flatMap((icon) =>
   profile.social.filter((item) => item.href && item.icon === icon),
 );
-
-function CompactIconLink({ item }: { item: SocialLink }) {
-  const isExternal = item.href.startsWith("http");
-
-  return (
-    <a
-      href={item.href}
-      target={isExternal ? "_blank" : undefined}
-      rel={isExternal ? "noopener noreferrer" : undefined}
-      aria-label={`${item.label}: ${item.value}`}
-      className="inline-flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-teal transition-all hover:border-teal/50 hover:bg-teal/10"
-    >
-      <Icon name={item.icon} size={16} />
-    </a>
-  );
-}
 
 export function Contact() {
   const email = profile.social.find((item) => item.icon === "email");
@@ -71,7 +55,7 @@ export function Contact() {
 
               <div className="flex flex-wrap items-center gap-2.5">
                 {actionIcons.map((item) => (
-                  <CompactIconLink key={item.label} item={item} />
+                  <CompactIconLink key={item.label} item={item} tone="dark" />
                 ))}
                 <a
                   href={email?.href ?? "#"}

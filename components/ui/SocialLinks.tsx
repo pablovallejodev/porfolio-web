@@ -6,6 +6,32 @@ type SocialLinksProps = {
   variant?: "stacked" | "inline" | "icons" | "icons-dark" | "cards";
 };
 
+export function CompactIconLink({
+  item,
+  tone = "light",
+}: {
+  item: SocialLink;
+  tone?: "light" | "dark";
+}) {
+  const isExternal = item.href.startsWith("http");
+
+  return (
+    <a
+      href={item.href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      aria-label={`${item.label}: ${item.value}`}
+      className={
+        tone === "dark"
+          ? "inline-flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-teal transition-all hover:border-teal/50 hover:bg-teal/10"
+          : "inline-flex size-10 items-center justify-center rounded-full border border-border bg-surface text-teal transition-all hover:border-teal/40 hover:bg-teal/[0.03]"
+      }
+    >
+      <Icon name={item.icon} size={16} />
+    </a>
+  );
+}
+
 export function SocialLinks({ items, variant = "stacked" }: SocialLinksProps) {
   const linked = items.filter((item) => item.href);
 

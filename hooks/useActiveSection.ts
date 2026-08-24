@@ -27,7 +27,7 @@ export function useActiveSection(sectionIds: string[]): string {
 
     const update = () => {
       if (isAtBottom()) {
-        setActiveId(lastId);
+        setActiveId(lastId!);
       } else if (lastObserverPick) {
         setActiveId(lastObserverPick);
       }

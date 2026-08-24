@@ -33,7 +33,7 @@ export function Hero() {
                 alt={profile.name}
                 width={256}
                 height={256}
-                priority
+                preload
                 className="size-full object-cover"
                 sizes="(max-width: 768px) 176px, (max-width: 1024px) 224px, 256px"
               />
